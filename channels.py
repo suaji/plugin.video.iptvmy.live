@@ -50,15 +50,33 @@ class AlJazeeraEnglish(BaseChannel):
     
         
 class BBC(BaseChannel):
-    playable = True
+    playable = False
     short_name = 'bbc'
-    long_name = 'BBC World News'
-    
+    long_name = 'BBC Live'
+    default_action = 'list_streams'
+
+    def action_list_streams(self):
+	data = {}
+	data.update(self.args)
+	data.update({'action': 'play_stream', 'Title': 'BBC World News', 'stream_url': 'rtmp://media2.lsops.net/live/ playpath=bbcworld1_en_high.sdp swfUrl="http://www.livestation.com/flash/player/5.4/player.swf" pageUrl="http://www.livestation.com/channels/10-bbc-world-news-english" swfVfy=true live=true'})
+        self.plugin.add_list_item(data, is_folder=False)
+        data.update({'action': 'play_stream', 'Title': 'BBC News', 'stream_url': 'rtmp://media4.lsops.net/live/ playpath=bbcnews_en_high.sdp swfUrl="http://www.livestation.com/flash/player/5.4/player.swf" pageUrl="http://www.livestation.com/channels/10-bbc-world-news-english" swfVfy=true live=true'})
+        self.plugin.add_list_item(data, is_folder=False)
+	self.plugin.end_list()
+
+    def action_play_stream(self):        
+        self.plugin.set_stream_url(self.args['stream_url'])
+
+
+class CNBC(BaseChannel):
+    playable = True
+    short_name = 'cnbc'
+    long_name = 'CNBC'
     default_action = 'play_stream' 
 
     def action_play_stream(self):
-        self.plugin.set_stream_url('rtmp://media2.lsops.net/live/ playpath=bbcworld1_en_high.sdp swfUrl="http://www.livestation.com/flash/player/5.4/player.swf" pageUrl="http://www.livestation.com/channels/10-bbc-world-news-english" swfVfy=true live=true')
-    
+        self.plugin.set_stream_url('rtmp://media7.lsops.net/live/ playpath=cnbc_en_high.sdp swfUrl="http://www.livestation.com/flash/player/5.4/player.swf" pageUrl="http://www.livestation.com/en/cnbc" swfVfy=true live=true')
+
         
 class RT(BaseChannel):
     playable = False
@@ -90,15 +108,22 @@ class ABCNews24(BaseChannel):
         self.plugin.set_stream_url("rtmp://cp103653.live.edgefcs.net:1935/live?_fcs_vhost=cp103653.live.edgefcs.net&akmfv=1.8 playpath=international_medium@36382 swfVfy=true live=true")
     
 class EuroNews(BaseChannel):
-    playable = True
+    playable = False
     short_name = 'euronews'
     long_name = 'EuroNews'
-    default_action = 'play_stream'
+    default_action = 'list_streams'
     
-    def action_play_stream(self):
-	self.plugin.set_stream_url('rtmp://media2.lsops.net/live/ playpath=euronews_en_high.sdp swfUrl="http://www.livestation.com/flash/player/5.4/player.swf" pageUrl="http://www.livestation.com/channels/1-euronews-english" swfVfy=true live=true')
-	
-	
+    def action_list_streams(self):
+        data = {}
+        data.update(self.args)
+        data.update({'action': 'play_stream', 'Title': 'English', 'stream_url': 'rtmp://media10.lsops.net/live/ swfUrl="http://beta.cdn.livestation.com/player/5.10/livestation-player.swf playpath=euronews_en_high.sdp'})
+        self.plugin.add_list_item(data, is_folder=False)
+	data.update({'action': 'play_stream', 'Title': 'French', 'stream_url': 'rtmp://media10.lsops.net/live/ swfUrl="http://beta.cdn.livestation.com/player/5.10/livestation-player.swf playpath=euronews_fr_high.sdp'})
+        self.plugin.add_list_item(data, is_folder=False)
+        self.plugin.end_list()
+
+    def action_play_stream(self):        
+        self.plugin.set_stream_url(self.args['stream_url'])
 
 class NASAHD(BaseChannel):
     playable = True
@@ -107,7 +132,35 @@ class NASAHD(BaseChannel):
     default_action = 'play_stream'
     
     def action_play_stream(self):
-	self.plugin.set_stream_url('rtmp://flash86.ustream.tv:1935/ustreamVideo/6540154 playpath=streams/live app=ustreamVideo/6540154 swfUrl="http://cdn1.ustream.tv/swf/4/viewer.rsl.558.swf" pageUrl="http://www.nasa.gov/multimedia/nasatv/ustream.html" live=true')
+	self.plugin.set_stream_url('rtmp://cp76072.live.edgefcs.net/live/ playpath=MED-HQ-Flash@42814 swfUrl="http://static-cdn1.ustream.tv/swf/l.ive/viewer.rsl:329.swf" pageUrl="http://www.ustream.tv/embed/6540154" live=true')
+	
+class PRESSTV(BaseChannel):
+    playable = True
+    short_name = 'presstv'
+    long_name = 'PRESS TV'
+    default_action = 'play_stream'
+    
+    def action_play_stream(self):
+	self.plugin.set_stream_url('rtmp://media4.lsops.net/live/presstv_en_high.sdp swfUrl="http://www.livestation.com/flash/player/5.4/player.swf" pageUrl="http://www.livestation.com/channels/press-tv" live=true')
+
+class Bloomberg(BaseChannel):
+    playable = True
+    short_name = 'bloomberg'
+    long_name = 'Bloomberg Television'
+    default_action = 'play_stream'
+    
+    def action_play_stream(self):
+	self.plugin.set_stream_url('rtmp://media7.lsops.net/live/bloomber_en_high.sdp swfUrl="http://www.livestation.com/flash/player/5.4/player.swf" pageUrl="http://www.livestation.com/bloomberg" live=true')
+	
+class SkyNews(BaseChannel):
+    playable = True
+    short_name = 'skynews'
+    long_name = 'Sky News International'
+    default_action = 'play_stream'
+    
+    def action_play_stream(self):
+	self.plugin.set_stream_url('rtmp://media4.lsops.net/live/skynewsi_en_high.sdp swfUrl="http://www.livestation.com/flash/player/5.4/player.swf" live=true')
+
 
 class France24(BaseChannel):
     playable = False
@@ -118,7 +171,7 @@ class France24(BaseChannel):
     def action_list_streams(self):
         data = {}
         data.update(self.args)
-        data.update({'action': 'play_stream', 'Title': 'English', 'stream_url': 'rtmp://stream2.france24.yacast.net/france24_live/en/ playpath=f24_liveen swfUrl="http://www.france24.com/en/sites/all/modules/maison/aef_player/flash/player.swf" swfVfy=true live=true'})
+        data.update({'action': 'play_stream', 'Title': 'English', 'stream_url': 'rtmp://stream2.france24.yacast.net/france24_live/en/ playpath=f24_liveen swfUrl="http://www.france24.com/fr/sites/all/modules/maison/aef_player/flash/player.swf" swfVfy=true live=true'})
         self.plugin.add_list_item(data, is_folder=False)
         data.update({'action': 'play_stream', 'Title': 'Francais', 'stream_url': 'rtmp://stream2.france24.yacast.net/france24_live/fr/ playpath=f24_livefr swfUrl="http://www.france24.com/fr/sites/all/modules/maison/aef_player/flash/player.swf" swfVfy=true live=true'})
         self.plugin.add_list_item(data, is_folder=False)
@@ -138,11 +191,11 @@ class CSpan(BaseChannel):
         data = {}
         data.update(self.args)
         data['action'] = 'play_stream'
-        data.update({'stream_url': "rtmp://cp82346.live.edgefcs.net:1935/live/CSPAN1@14845", 'Title': 'CSPAN1'})
+        data.update({'stream_url': "rtmp://cp82346.live.edgefcs.net/live/CSPAN1@14845", 'Title': 'CSPAN1'})
         self.plugin.add_list_item(data, is_folder=False)
-        data.update({'stream_url': "rtmp://cp82347.live.edgefcs.net:1935/live/CSPAN2@14846", 'Title': 'CSPAN2'})
+        data.update({'stream_url': "rtmp://cp82347.live.edgefcs.net/live/CSPAN2@14846", 'Title': 'CSPAN2'})
         self.plugin.add_list_item(data, is_folder=False)
-        data.update({'stream_url': "rtmp://cp82348.live.edgefcs.net:1935/live/CSPAN3@14847", 'Title': 'CSPAN3'})
+        data.update({'stream_url': "rtmp://cp82348.live.edgefcs.net/live/CSPAN3@14847", 'Title': 'CSPAN3'})
         self.plugin.add_list_item(data, is_folder=False)
         self.plugin.end_list()
         
@@ -157,20 +210,16 @@ class CNN(BaseChannel):
     short_name = 'cnn'
     long_name = 'CNN'
     default_action = 'list_streams'
-    swf_url = 'http://i.cdn.turner.com/cnn/.element/apps/CNNLive/2.1.5.7/assets/swfs/LivePlayer.swf'
+    swf_url = 'http://beta.cdn.livestation.com/player/5.10/livestation-player.swf'
     
 
     def action_list_streams(self):
         data = {}
         data.update(self.args)
         data['action'] = 'play_stream'
-        data.update({'stream_url': "rtmp://cp44679.live.edgefcs.net/live/cnn_stream1_low@2785", 'stream_number': 1,  'Title': 'CNN 1'})
+	data.update({'stream_url': "rtmp://media2.lsops.net/live/cnn_en_high.sdp", 'stream_number': 1,  'Title': 'CNN 1'})
         self.plugin.add_list_item(data, is_folder=False)
-        data.update({'stream_url': "rtmp://cp44679.live.edgefcs.net/live/cnn_stream2_low@2787", 'stream_number': 2, 'Title': 'CNN 2'})
-        self.plugin.add_list_item(data, is_folder=False)
-        data.update({'stream_url': "rtmp://cp44679.live.edgefcs.net/live/cnn_stream3_low@2796", 'stream_number': 3, 'Title': 'CNN 3'})
-        self.plugin.add_list_item(data, is_folder=False)        
-        data.update({'stream_url': "rtmp://cp44679.live.edgefcs.net/live/cnn_stream4_low@2797", 'stream_number': 4, 'Title': 'CNN 4'})
+	data.update({'stream_url': "rtmp://media2.lsops.net/live/cnn_en_medium.sdp", 'stream_number': 2,  'Title': 'CNN 2'})
         self.plugin.add_list_item(data, is_folder=False)
         self.plugin.end_list()
         

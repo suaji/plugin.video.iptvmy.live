@@ -13,10 +13,10 @@ except:
     from pysqlite2 import dbapi2 as sqlite
     
 __plugin__ = "World News Live"
-__author__ = 'Andre <andrepleblanc@gmail.com>'
-__url__ = 'http://github.com/andrepl/plugin.video.world.news.live/'
-__date__ = '05-18-2011'
-__version__ = '1.2.4'
+__author__ = 'Florian Neagu <michaelneagu@gmail.com>'
+__url__ = 'http://world-news-live.googlecode.com/svn/trunk'
+__date__ = '1-10-2013'
+__version__ = '1.2.7'
 __settings__ = xbmcaddon.Addon(id='plugin.video.world.news.live')
 
 
@@ -267,7 +267,7 @@ class WorldNewsLivePlugin(object):
         
         li=xbmcgui.ListItem(
             label=info['Title'], 
-            iconImage=info['Icon'], 
+            iconImage=unicode(info['Icon']), 
             thumbnailImage=info['Thumb']
         )
         

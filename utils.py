@@ -78,7 +78,8 @@ class URLParser(object):
 
     def get_base_url(self):
         print self.data
-        url = "%(scheme)s://%(netloc)s/%(app)s?ovpfv=2.1.4" % self.data
+        #url = "%(scheme)s://%(netloc)s/%(app)s?ovpfv=2.1.4" % self.data
+        url = "%(scheme)s://%(netloc)s/%(app)s/" % self.data
         if self.data['querystring']:
             url += "&%(querystring)s" % self.data
         return url
