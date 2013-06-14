@@ -172,9 +172,9 @@ class France24(BaseChannel):
     def action_list_streams(self):
         data = {}
         data.update(self.args)
-        data.update({'action': 'play_stream', 'Title': 'English', 'stream_url': 'rtmp://stream2.france24.yacast.net/france24_live/en/ playpath=f24_liveen swfUrl="http://www.france24.com/fr/sites/all/modules/maison/aef_player/flash/player.swf" swfVfy=true live=true'})
+        data.update({'action': 'play_stream', 'Title': 'English', 'stream_url': 'rtmp://vipwowza.yacast.net/france24_live_en/ playpath=f24_liveen.stream swfUrl="http://www.france24.com/en/sites/all/modules/maison/aef_player/flash/player_new.swf" swfVfy=true live=true'})
         self.plugin.add_list_item(data, is_folder=False)
-        data.update({'action': 'play_stream', 'Title': 'Francais', 'stream_url': 'rtmp://stream2.france24.yacast.net/france24_live/fr/ playpath=f24_livefr swfUrl="http://www.france24.com/fr/sites/all/modules/maison/aef_player/flash/player.swf" swfVfy=true live=true'})
+        data.update({'action': 'play_stream', 'Title': 'Francais', 'stream_url': 'rtmp://vipwowza.yacast.net/france24_live_fr/ playpath=f24_livefr.stream swfUrl="http://www.france24.com/fr/sites/all/modules/maison/aef_player/flash/player_new.swf" swfVfy=true live=true'})
         self.plugin.add_list_item(data, is_folder=False)
         self.plugin.end_list()
 
