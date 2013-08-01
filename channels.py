@@ -265,7 +265,7 @@ class Bloomberg(BaseChannel):
     default_action = 'play_stream'
     
     def action_play_stream(self):
-	self.plugin.set_stream_url('rtmp://media4.lsops.net/live/bloomber_en_high.sdp swfUrl="http://static.ls-cdn.com/player/5.10/livestation-player.swf" pageUrl="http://www.livestation.com/en/bloomberg" live=true')
+	self.plugin.set_stream_url('http://hd4.lsops.net/live/bloomber_en_hls.smil/playlist.m3u8')
 	
 ##########
 ## eNCA ##
