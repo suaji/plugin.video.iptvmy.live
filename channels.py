@@ -321,18 +321,27 @@ class eNCA(BaseChannel):
     def action_play_stream(self):        
         self.plugin.set_stream_url('http://hd7.lsops.net/live/enca_en_hls.smil/playlist.m3u8')
 
-############################
-## Sky News International ##
-############################
+##############
+## Sky News ##
+##############
 
 class SkyNews(BaseChannel):
-    playable = True
+    playable = False
     short_name = 'skynews'
-    long_name = 'Sky News International'
-    default_action = 'play_stream'
+    long_name = 'Sky News'
+    default_action = 'list_streams'
     
-    def action_play_stream(self):
-	self.plugin.set_stream_url('http://hd2.lsops.net/live/skynewsi_en_hls.smil/playlist.m3u8')
+    def action_list_streams(self):
+        data = {}
+        data.update(self.args)
+#         data.update({'action': 'play_stream', 'Title': 'Sky News', 'stream_url': 'http://bskybwlivewm.fplive.net/bsbskynews109-live/bskyb-live109-high?token=?'})
+#         self.plugin.add_list_item(data, is_folder=False)
+        data.update({'action': 'play_stream', 'Title': 'Sky News International (UK Only)', 'stream_url': 'http://hd2.lsops.net/live/skynewsi_en_hls.smil/playlist.m3u8'})
+        self.plugin.add_list_item(data, is_folder=False)
+        self.plugin.end_list()
+
+    def action_play_stream(self):        
+        self.plugin.set_stream_url(self.args['stream_url'])
 
 ##############
 ## France24 ##
