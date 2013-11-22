@@ -4,6 +4,19 @@ import simplejson
 from channel import BaseChannel, ChannelException,ChannelMetaClass, STATUS_BAD, STATUS_GOOD, STATUS_UGLY
 from utils import *
 
+#############
+## Arirang ##
+#############
+
+class Arirang(BaseChannel):
+    playable = True
+    short_name = 'arirang_world'
+    long_name = 'Arirang TV World'
+    default_action = 'play_stream' 
+
+    def action_play_stream(self):
+        self.plugin.set_stream_url('http://worldlive-ios.arirang.co.kr/arirang/arirangtvworldios.mp4.m3u8')
+
 ##################
 ## AlJazeera AR ##
 ##################
@@ -393,6 +406,45 @@ class DW(BaseChannel):
     def action_play_stream(self):        
         self.plugin.set_stream_url(self.args['stream_url'])
         
+###############
+## NHK WORLD ##
+###############
+
+class NHK(BaseChannel):
+    playable = True
+    short_name = 'nhk_world'
+    long_name = 'NHK World TV'
+    default_action = 'play_stream' 
+
+    def action_play_stream(self):
+        self.plugin.set_stream_url('rtmp://ams-3.srv.fivecool.net/nhkw/gwm swfUrl=http://www3.nhk.or.jp/nhkworld/r/movie/streamhub_player20110926.swf pageUrl=http://www3.nhk.or.jp/nhkworld/r/movie/')
+        
+###############
+## CCTV News ##
+###############
+
+class CCTV(BaseChannel):
+    playable = True
+    short_name = 'cctv_news_english'
+    long_name = 'CCTV News'
+    default_action = 'play_stream' 
+
+    def action_play_stream(self):
+        self.plugin.set_stream_url('http://88.212.11.206:5000/live/22/22.m3u8')   
+
+###################
+## MHz Worldview ##
+###################
+
+class MHz(BaseChannel):
+    playable = True
+    short_name = 'mhz_worldview'
+    long_name = 'MHz Worldview'
+    default_action = 'play_stream' 
+
+    def action_play_stream(self):
+        self.plugin.set_stream_url('rtmp://cp101680.live.edgefcs.net:1935/live playpath=worldview_900kbps_01@33 swfUrl=http://admin.brightcove.com/viewer/us20120627.1407/federatedVideoUI/BrightcovePlayer.swf pageUrl=http://www.mhznetworks.org/mhzworldview/ swfVfy=true live=true')
+        
 #########
 ## CNN ##
 #########
@@ -432,5 +484,4 @@ class CSpan(BaseChannel):
         
     def action_play_stream(self):
         parser = URLParser(swf_url = self.swf_url)
-        self.plugin.set_stream_url(parser(self.args['stream_url']))
-           
+        self.plugin.set_stream_url(parser(self.args['stream_url']))          
