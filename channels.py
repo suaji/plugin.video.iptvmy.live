@@ -102,7 +102,7 @@ class BBC(BaseChannel):
 	data.update(self.args)
 #     data.update({'action': 'play_stream', 'Title': 'BBC News', 'stream_url': 'rtmp://media4.lsops.net/live/ playpath=bbcnews_en_high.sdp swfUrl="http://www.livestation.com/flash/player/5.4/player.swf" pageUrl="http://www.livestation.com/channels/10-bbc-world-news-english" swfVfy=true live=true'})
 #         self.plugin.add_list_item(data, is_folder=False)
-	data.update({'action': 'play_stream', 'Title': 'BBC World News', 'stream_url': 'http://bbcworld.lsops.net/live/bbcworld_en_hls.smil/playlist.m3u8'})
+	data.update({'action': 'play_stream', 'Title': 'BBC World News', 'stream_url': 'http://livestation_hls-lh.akamaihd.net/i/bbcworld_en@105465/master.m3u8'})
         self.plugin.add_list_item(data, is_folder=False)
 	self.plugin.end_list()
 
