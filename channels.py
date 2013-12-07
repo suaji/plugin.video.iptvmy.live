@@ -406,6 +406,28 @@ class DW(BaseChannel):
     def action_play_stream(self):        
         self.plugin.set_stream_url(self.args['stream_url'])
         
+########################
+## The People's Voice ##
+########################    
+
+class TPV(BaseChannel):
+    playable = False
+    short_name = 'tpv'
+    long_name = 'The People`s Voice'
+    default_action = 'list_streams'
+    
+    def action_list_streams(self):
+        data = {}
+        data.update(self.args)
+        data.update({'action': 'play_stream', 'Title': 'The People`s Voice', 'stream_url': 'rtmp://cdn.rbm.tv/rightbrainmedia-live-106/_definst_/ddstream_1'})
+        self.plugin.add_list_item(data, is_folder=False)
+        data.update({'action': 'play_stream', 'Title': 'The People`s Voice (iOS)', 'stream_url': 'http://cdn.rbm.tv:1935/rightbrainmedia-live-106/_definst_/ddstream_1/playlist.m3u8'})
+        self.plugin.add_list_item(data, is_folder=False)
+        self.plugin.end_list()
+
+    def action_play_stream(self):        
+        self.plugin.set_stream_url(self.args['stream_url'])
+        
 ###############
 ## NHK WORLD ##
 ###############
