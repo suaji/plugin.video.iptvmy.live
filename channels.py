@@ -479,6 +479,19 @@ class CNN(BaseChannel):
     
     def action_play_stream(self):
 	self.plugin.set_stream_url('http://livestation_hls-lh.akamaihd.net/i/cnn_en@105455/master.m3u8')
+	
+##############
+## 24 Vesti ##
+##############
+
+class CNN(BaseChannel):
+    playable = True
+    short_name = '24vesti'
+    long_name = '24 Vesti'
+    default_action = 'play_stream'
+    
+    def action_play_stream(self):
+	self.plugin.set_stream_url('mms://62.162.58.55/24vesti')
     
 ###########
 ## CSpan ##
