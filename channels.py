@@ -1,4 +1,3 @@
-
 import time
 import simplejson
 from channel import BaseChannel, ChannelException,ChannelMetaClass, STATUS_BAD, STATUS_GOOD, STATUS_UGLY
@@ -189,19 +188,19 @@ class VoAPersian(BaseChannel):
 ###############  
 
 class ABCNews24(BaseChannel):
-    playable=False
+    playable = False
     short_name = 'abc24'
-    long_name = "ABC News 24"
+    long_name = 'ABC News 24'
     default_action = 'list_streams'
-
+    
     def action_list_streams(self):
-	data = {}
-	data.update(self.args)
+        data = {}
+        data.update(self.args)
 	data.update({'action': 'play_stream', 'Title': 'ABC News 24 - (Australia Only)', 'stream_url': 'http://www.abc.net.au/res/streaming/video/hls/news24.m3u8'})
         self.plugin.add_list_item(data, is_folder=False)
         data.update({'action': 'play_stream', 'Title': 'ABC News 24', 'stream_url': 'rtmp://cp103653.live.edgefcs.net:1935/live?_fcs_vhost=cp103653.live.edgefcs.net&akmfv=1.8 playpath=international_medium@36382 swfVfy=true live=true'})
         self.plugin.add_list_item(data, is_folder=False)
-	self.plugin.end_list()
+        self.plugin.end_list()
 
     def action_play_stream(self):        
         self.plugin.set_stream_url(self.args['stream_url'])
@@ -224,13 +223,22 @@ class BBCARABIC(BaseChannel):
 ####################
         
 class BBCWORLD(BaseChannel):
-    playable = True
+    playable = False
     short_name = 'bbcworld_en'
     long_name = 'BBC World News'
-    default_action = 'play_stream'
+    default_action = 'list_streams'
+    
+    def action_list_streams(self):
+        data = {}
+        data.update(self.args)
+	data.update({'action': 'play_stream', 'Title': 'Medium Quality', 'stream_url': 'rtmp://hd4.lsops.net/live/ playpath=bbcnews_en_364 swfUrl="http://static.ls-cdn.com/player/5.10/livestation-player.swf" swfVfy=true live=true'})
+        self.plugin.add_list_item(data, is_folder=False)
+        data.update({'action': 'play_stream', 'Title': 'Mobile Quality', 'stream_url': 'http://livestation_hls-lh.akamaihd.net/i/bbcworld_en@105465/master.m3u8'})
+        self.plugin.add_list_item(data, is_folder=False)
+        self.plugin.end_list()
 
-    def action_play_stream(self):
-        self.plugin.set_stream_url('http://livestation_hls-lh.akamaihd.net/i/bbcworld_en@105465/master.m3u8')
+    def action_play_stream(self):        
+        self.plugin.set_stream_url(self.args['stream_url'])
 
 #################
 ## BigPondNews ##
