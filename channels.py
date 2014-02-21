@@ -317,11 +317,11 @@ class i24news(BaseChannel):
     def action_list_streams(self):
         data = {}
         data.update(self.args)
-        data.update({'action': 'play_stream', 'Title': 'English', 'stream_url': 'rtmp://i24news.lsops.net/live/%20playpath=i24news_en_584 swfUrl=http://static.ls-cdn.com/player/5.10/livestation-player.swf?1384754065 live=1 pageUrl=http://www.livestation.com/en/i24news'})
+        data.update({'action': 'play_stream', 'Title': 'English', 'stream_url': 'http://bcoveliveios-i.akamaihd.net/hls/live/215102/master_english/398/master.m3u8'})
         self.plugin.add_list_item(data, is_folder=False)
-        data.update({'action': 'play_stream', 'Title': 'French', 'stream_url': 'http://brightcove03-f.akamaihd.net/french_1_650@117902'})
+        data.update({'action': 'play_stream', 'Title': 'French', 'stream_url': 'http://bcoveliveios-i.akamaihd.net/hls/live/215102/master_french/412/master.m3u8'})
         self.plugin.add_list_item(data, is_folder=False)
-        data.update({'action': 'play_stream', 'Title': 'Arabic', 'stream_url': 'http://brightcove03-f.akamaihd.net/arabic_1_650@117902'})
+        data.update({'action': 'play_stream', 'Title': 'Arabic', 'stream_url': 'http://bcoveliveios-i.akamaihd.net/hls/live/215102/master_arabic/391/master.m3u8'})
         self.plugin.add_list_item(data, is_folder=False)
         self.plugin.end_list()
 
