@@ -354,23 +354,23 @@ class EuroNews(BaseChannel):
     def action_list_streams(self):
         data = {}
         data.update(self.args)
-        data.update({'action': 'play_stream', 'Title': 'Arabic', 'stream_url': 'rtmp://hd1.lsops.net/live/ swfUrl="http://static.ls-cdn.com/player/5.10/livestation-player.swf playpath=euronews_ar_340 pageUrl=http://www.livestation.com/ar/euronews'})
+        data.update({'action': 'play_stream', 'Title': 'Arabic', 'stream_url': 'rtmp://fr-par-10-stream-relay.hexaglobe.net/rtpeuronewslive/ar_video750_rtp.sdp swfUrl=http://www.euronews.com/media/player_live_1_14.swf swfVfy=true live=true'})
         self.plugin.add_list_item(data, is_folder=False)
-        data.update({'action': 'play_stream', 'Title': 'English', 'stream_url': 'rtmp://hd1.lsops.net/live/ swfUrl="http://static.ls-cdn.com/player/5.10/livestation-player.swf playpath=euronews_en_340 pageUrl=http://www.livestation.com/en/euronews'})
+        data.update({'action': 'play_stream', 'Title': 'English', 'stream_url': 'rtmp://fr-par-10-stream-relay.hexaglobe.net/rtpeuronewslive/en_video750_rtp.sdp swfUrl=http://www.euronews.com/media/player_live_1_14.swf swfVfy=true live=true'})
         self.plugin.add_list_item(data, is_folder=False)
-	data.update({'action': 'play_stream', 'Title': 'French', 'stream_url': 'rtmp://hd1.lsops.net/live/ swfUrl="http://static.ls-cdn.com/player/5.10/livestation-player.swf playpath=euronews_fr_340 pageUrl=http://www.livestation.com/fr/euronews'})
+	data.update({'action': 'play_stream', 'Title': 'French', 'stream_url': 'rtmp://fr-par-10-stream-relay.hexaglobe.net/rtpeuronewslive/fr_video750_rtp.sdp swfUrl=http://www.euronews.com/media/player_live_1_14.swf swfVfy=true live=true'})
         self.plugin.add_list_item(data, is_folder=False)
-        data.update({'action': 'play_stream', 'Title': 'German', 'stream_url': 'rtmp://hd1.lsops.net/live/ swfUrl="http://static.ls-cdn.com/player/5.10/livestation-player.swf playpath=euronews_de_340 pageUrl=http://www.livestation.com/de/euronews'})
+        data.update({'action': 'play_stream', 'Title': 'German', 'stream_url': 'rtmp://fr-par-10-stream-relay.hexaglobe.net/rtpeuronewslive/de_video750_rtp.sdp swfUrl=http://www.euronews.com/media/player_live_1_14.swf swfVfy=true live=true'})
         self.plugin.add_list_item(data, is_folder=False)
-        data.update({'action': 'play_stream', 'Title': 'Italian', 'stream_url': 'rtmp://hd1.lsops.net/live/ swfUrl="http://static.ls-cdn.com/player/5.10/livestation-player.swf playpath=euronews_it_340 pageUrl=http://www.livestation.com/it/euronews'})
+        data.update({'action': 'play_stream', 'Title': 'Italian', 'stream_url': 'rtmp://fr-par-10-stream-relay.hexaglobe.net/rtpeuronewslive/it_video750_rtp.sdp swfUrl=http://www.euronews.com/media/player_live_1_14.swf swfVfy=true live=true'})
         self.plugin.add_list_item(data, is_folder=False)
-        data.update({'action': 'play_stream', 'Title': 'Portuguese', 'stream_url': 'rtmp://hd1.lsops.net/live/ swfUrl="http://static.ls-cdn.com/player/5.10/livestation-player.swf playpath=euronews_pt_340 pageUrl=http://www.livestation.com/pt/euronews'})
+        data.update({'action': 'play_stream', 'Title': 'Portuguese', 'stream_url': 'rtmp://fr-par-10-stream-relay.hexaglobe.net/rtpeuronewslive/pt_video750_rtp.sdp swfUrl=http://www.euronews.com/media/player_live_1_14.swf swfVfy=true live=true'})
         self.plugin.add_list_item(data, is_folder=False)
-        data.update({'action': 'play_stream', 'Title': 'Russian', 'stream_url': 'rtmp://hd1.lsops.net/live/ swfUrl="http://static.ls-cdn.com/player/5.10/livestation-player.swf playpath=euronews_ru_340 pageUrl=http://www.livestation.com/ru/euronews'})
+        data.update({'action': 'play_stream', 'Title': 'Russian', 'stream_url': 'rtmp://fr-par-10-stream-relay.hexaglobe.net/rtpeuronewslive/ru_video750_rtp.sdp swfUrl=http://www.euronews.com/media/player_live_1_14.swf swfVfy=true live=true'})
         self.plugin.add_list_item(data, is_folder=False)
-        data.update({'action': 'play_stream', 'Title': 'Spanish', 'stream_url': 'rtmp://hd1.lsops.net/live/ swfUrl="http://static.ls-cdn.com/player/5.10/livestation-player.swf playpath=euronews_es_340 pageUrl=http://www.livestation.com/es/euronews'})
+        data.update({'action': 'play_stream', 'Title': 'Spanish', 'stream_url': 'rtmp://fr-par-10-stream-relay.hexaglobe.net/rtpeuronewslive/es_video750_rtp.sdp swfUrl=http://www.euronews.com/media/player_live_1_14.swf swfVfy=true live=true'})
         self.plugin.add_list_item(data, is_folder=False)
-        data.update({'action': 'play_stream', 'Title': 'Turkish', 'stream_url': 'rtmp://hd1.lsops.net/live/ swfUrl="http://static.ls-cdn.com/player/5.10/livestation-player.swf playpath=euronews_tr_340 pageUrl=http://www.livestation.com/tr/euronews'})
+        data.update({'action': 'play_stream', 'Title': 'Turkish', 'stream_url': 'rtmp://fr-par-10-stream-relay.hexaglobe.net/rtpeuronewslive/tr_video750_rtp.sdp swfUrl=http://www.euronews.com/media/player_live_1_14.swf swfVfy=true live=true'})
         self.plugin.add_list_item(data, is_folder=False)
         self.plugin.end_list()
 
@@ -620,9 +620,9 @@ class TPV(BaseChannel):
     def action_list_streams(self):
         data = {}
         data.update(self.args)
-        data.update({'action': 'play_stream', 'Title': 'High Quality', 'stream_url': 'rtmp://cdn.rbm.tv/rightbrainmedia-live-106/_definst_/ddstream_1'})
+        data.update({'action': 'play_stream', 'Title': 'High Quality', 'stream_url': 'rtmp://cdn.rbm.tv/rightbrainmedia-live-106/_definst_/ddstream_3'})
         self.plugin.add_list_item(data, is_folder=False)
-        data.update({'action': 'play_stream', 'Title': 'Mobile Quality', 'stream_url': 'http://cdn.rbm.tv:1935/rightbrainmedia-live-106/_definst_/ddstream_1/playlist.m3u8'})
+        data.update({'action': 'play_stream', 'Title': 'Mobile Quality', 'stream_url': 'http://cdn.rbm.tv:1935/rightbrainmedia-live-106/_definst_/ddstream_3/playlist.m3u8'})
         self.plugin.add_list_item(data, is_folder=False)
         self.plugin.end_list()
 
@@ -662,7 +662,7 @@ class CCTV(BaseChannel):
 class MHz(BaseChannel):
     playable = True
     short_name = 'mhz_worldview'
-    long_name = 'MHz Worldview'
+    long_name = 'MHz Worldview (Offline)'
     default_action = 'play_stream' 
 
     def action_play_stream(self):
