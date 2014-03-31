@@ -636,11 +636,11 @@ class TPV(BaseChannel):
 class NHK(BaseChannel):
     playable = True
     short_name = 'nhk_world'
-    long_name = 'NHK World TV (Offline)'
+    long_name = 'NHK World TV'
     default_action = 'play_stream' 
 
     def action_play_stream(self):
-        self.plugin.set_stream_url('rtmp://ams-3.srv.fivecool.net/nhkw/gwm swfUrl=http://www3.nhk.or.jp/nhkworld/r/movie/streamhub_player20110926.swf pageUrl=http://www3.nhk.or.jp/nhkworld/r/movie/')
+        self.plugin.set_stream_url('http://plslive-w.nhk.or.jp/nhkworld/app/live.m3u8')
         
 ###############
 ## CCTV News ##
@@ -662,11 +662,11 @@ class CCTV(BaseChannel):
 class MHz(BaseChannel):
     playable = True
     short_name = 'mhz_worldview'
-    long_name = 'MHz Worldview (Offline)'
+    long_name = 'MHz Worldview'
     default_action = 'play_stream' 
 
     def action_play_stream(self):
-        self.plugin.set_stream_url('rtmp://cp101680.live.edgefcs.net:1935/live playpath=worldview_900kbps_01@33 swfUrl=http://admin.brightcove.com/viewer/us20120627.1407/federatedVideoUI/BrightcovePlayer.swf pageUrl=http://www.mhznetworks.org/mhzworldview/ swfVfy=true live=true')
+        self.plugin.set_stream_url('rtmp://uni6rtmp.tulix.tv:1935/mhznetabr playpath=mhznetabr1 swfUrl=http://swf.tulix.tv/jwplayer/jwplayer.flash.swf live=1 pageUrl=http://www.tulix.com/iframe/mhzabr/index.php')
         
 #########
 ## CNN ##
