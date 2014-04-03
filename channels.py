@@ -1,4 +1,3 @@
-
 import time
 import simplejson
 from channel import BaseChannel, ChannelException,ChannelMetaClass, STATUS_BAD, STATUS_GOOD, STATUS_UGLY
@@ -468,7 +467,7 @@ class BLOOMBERG(BaseChannel):
     def action_list_streams(self):
         data = {}
         data.update(self.args)
-        data.update({'action': 'play_stream', 'Title': 'Bloomberg TV', 'stream_url': 'http://hd4.lsops.net/live/bloomber_en_hls.smil/playlist.m3u8'})
+        data.update({'action': 'play_stream', 'Title': 'Bloomberg TV', 'stream_url': 'http://live.bltvios.com.edgesuite.net/tv/us/master.m3u8'})
         self.plugin.add_list_item(data, is_folder=False)
         data.update({'action': 'play_stream', 'Title': 'Bloomberg U.S.', 'stream_url': 'rtmpt://cp116697.live.edgefcs.net:80/live/BnazlkNDpCIcD-QkfyZCQKlRiiFnVa5I_640_360_1000@18679'})
         self.plugin.add_list_item(data, is_folder=False)
