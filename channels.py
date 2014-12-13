@@ -564,10 +564,6 @@ class DW(BaseChannel):
     def action_list_streams(self):
         data = {}
         data.update(self.args)
-        data.update({'action': 'play_stream', 'Title': 'DW', 'stream_url': 'http://www.metafilegenerator.de/DWelle/tv/ios/master.m3u8'})
-        self.plugin.add_list_item(data, is_folder=False)
-        data.update({'action': 'play_stream', 'Title': 'DW (North America)', 'stream_url': 'http://www.metafilegenerator.de/DWelle/tv-northamerica/ios/master.m3u8'})
-        self.plugin.add_list_item(data, is_folder=False)
         data.update({'action': 'play_stream', 'Title': 'DW (Arabia)', 'stream_url': 'http://www.metafilegenerator.de/DWelle/tv-arabia/ios/master.m3u8'})
         self.plugin.add_list_item(data, is_folder=False)
         data.update({'action': 'play_stream', 'Title': 'DW (Asia)', 'stream_url': 'http://www.metafilegenerator.de/DWelle/tv-asia/ios/master.m3u8'})
