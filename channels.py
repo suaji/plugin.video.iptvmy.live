@@ -244,6 +244,19 @@ class BBCARABIC(BaseChannel):
     def action_play_stream(self):
         self.plugin.set_stream_url('http://wpc.C1A9.edgecastcdn.net/hls-live/20C1A9/bbc_ar/ls_satlink/b_,264,528,828,.m3u8')
 
+#################
+## BBC Persian ##
+#################
+        
+class BBCPERSIAN(BaseChannel):
+    playable = True
+    short_name = 'bbc_persian'
+    long_name = 'BBC Persian'
+    default_action = 'play_stream'
+
+    def action_play_stream(self):
+        self.plugin.set_stream_url('http://wpc.c1a9.edgecastcdn.net/hls-live/20C1A9/bbc_persian/ls_satlink/b_,264,528,828,.m3u8')
+
 ##############
 ## BBC News ##
 ##############
