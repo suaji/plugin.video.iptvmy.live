@@ -436,21 +436,6 @@ class PRESSTV(BaseChannel):
     def action_play_stream(self):
 	self.plugin.set_stream_url('http://204.107.26.252:1935/live/905.high.stream/HasBahCa.m3u8')
 
-
-############
-## PRO TV ##
-############
-
-class PROTV(BaseChannel):
-    playable = True
-    short_name = 'protv'
-    long_name = 'PRO TV'
-    default_action = 'play_stream' 
-
-    def action_play_stream(self):
-        self.plugin.set_stream_url('http://origin2.live.web.tv.streamprovider.net/streams/5dcc8953f23e3c459cb8ee7e10f4ec11/index.m3u8')
-
-
 ###############
 ## Bloomberg ##
 ###############
@@ -756,4 +741,17 @@ class UT(BaseChannel):
     default_action = 'play_stream'
     	     
     def action_play_stream(self):
-	self.plugin.set_stream_url('http://stream2g01-g50.1plus1.ua/380555/smil:380555.smil/playlist.m3u8')
+        self.plugin.set_stream_url('http://stream2g01-g50.1plus1.ua/380555/smil:380555.smil/playlist.m3u8')
+
+#############
+## Digi 24 ##
+#############
+
+class Digi24(BaseChannel):
+    playable = True
+    short_name = 'digi24'
+    long_name = 'Digi 24'
+    default_action = 'play_stream' 
+
+    def action_play_stream(self):
+        self.plugin.set_stream_url('http://82.76.249.77:80/digi24edge/digi24hdhqhls/index.m3u8')
