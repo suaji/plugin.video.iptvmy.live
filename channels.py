@@ -436,21 +436,6 @@ class PRESSTV(BaseChannel):
     def action_play_stream(self):
 	self.plugin.set_stream_url('http://204.107.26.252:1935/live/905.high.stream/HasBahCa.m3u8')
 
-
-############
-## PRO TV ##
-############
-
-class PROTV(BaseChannel):
-    playable = True
-    short_name = 'protv'
-    long_name = 'PRO TV'
-    default_action = 'play_stream' 
-
-    def action_play_stream(self):
-        self.plugin.set_stream_url('http://origin2.live.web.tv.streamprovider.net/streams/5dcc8953f23e3c459cb8ee7e10f4ec11/index.m3u8')
-
-
 ###############
 ## Bloomberg ##
 ###############
